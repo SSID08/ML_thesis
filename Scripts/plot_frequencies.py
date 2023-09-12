@@ -4,6 +4,10 @@ import matplotlib.pyplot as plt
 import re
 import os
 
+'''This script plots the average counts of moderate (missense variant, inframe deletion, etc.) and high impact variants\
+(stop gained/lost, frameshift mutation) within cannoncial resistance associated genes in resistant and susceptible isolates\
+'''
+
 for file in os.listdir('./Updated_Data/Variant_count_Pickle_files/'):
     pickle_file=pickle.load(open(os.path.join('./Updated_Data/Variant_count_Pickle_files/',file),'rb'))
     f_name=re.sub('.pkl','',file)

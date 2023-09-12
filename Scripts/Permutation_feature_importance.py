@@ -8,6 +8,9 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.inspection import permutation_importance
 from sklearn.model_selection import train_test_split
 
+'''This script performes permuation feature importance analysis using the sklearn\
+ib-built approach based on user input feature matrices'''
+
 parser=argparse.ArgumentParser(description='Run Permutation Feature Importance')
 
 parser.add_argument('--input',help="pickle input matrix and classification labels",required=True)

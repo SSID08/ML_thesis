@@ -14,6 +14,17 @@ import os
 import re
 #import json
 
+'''
+This script runs an iterative feature selection algorithm on the user input files.\
+Breifly, it iteratively builds models and tests performance on an unseen hold-out set.\
+The features in the lowest 10% of the feature importance scores as outputted by the\
+feature_importances attribute are dropped following each iteration and the model is built\
+and tested again on the rest of the features. This process is performed until only <100\
+features are left or until max_iterations is reached. Within all iterations, the feature set\
+that achieved the highest predictive perfomrance on the test-set (measured by ROC) is retained and is used to\
+compute a 5-fold CV on the entire dataset. Generally, the input data for this type of analysis was the genome-wide genotypes\
+remaining after filtering at 0.5% of non-major allele frequency.
+'''
 #genos=defaultdict(dict)
 
 parser=argparse.ArgumentParser(description='Run ML training with iterative downstream feature selection')

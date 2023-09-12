@@ -16,6 +16,10 @@ import re
 
 #genos=defaultdict(dict)
 
+'''This is a CLI tool to build xgBoost models on user input\
+feature matrices
+'''
+
 parser=argparse.ArgumentParser(description='Run ML training')
 
 parser.add_argument('--input',help="pickle input matrix and classification labels",required=True)

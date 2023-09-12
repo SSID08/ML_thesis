@@ -7,6 +7,10 @@ import pandas as pd
 import os
 import re
 
+'''
+This script creates feature matrix from VCF files for downstream ML analysis
+'''
+
 lineage_dict={}
 
 with open('./Data/lineage_table/lineage_tracker.txt','r') as f:

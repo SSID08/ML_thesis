@@ -4,6 +4,12 @@ import pickle
 import numpy as np
 import os
 
+'''
+This script performs one-hot-encoding transformation for categorical features\
+included in the feature matrix and saves the resultant dataframe with the updated\
+feature names
+'''
+
 for file in os.listdir('./Updated_Data/Whole_Genome_dataframes'):
     f=os.path.join('./Updated_Data/Whole_Genome_dataframes',file)
     pd_df=pickle.load(open(f,"rb"))

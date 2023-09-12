@@ -1,11 +1,14 @@
 import subprocess as sp 
-from collections import defaultdict
-import numpy as np
+#from collections import defaultdict
+#import numpy as np
 import argparse
-import pickle
-import os
-import re
-import pandas as pd
+#import pickle
+#import os
+#import re
+#import pandas as pd
+
+'''This script is a small helper program to merge Feature importance coefficients\
+with SNPEff annotated information on the particular extracted variants of interest'''
 
 parser=argparse.ArgumentParser(description='Inspect high-feature importance variants')
 parser.add_argument('--vcf',required=True)
@@ -18,7 +21,6 @@ out_dict={}
 bed_positions={}
 coefs=[]
 count=0
-err_positions={}
 
 for l in sp.Popen(rf"bedtools intersect -a {args.vcf} -wa -header -b {args.bed_file}" + r"| bcftools query -f '%AF\t%POS\t%ANN\n'",shell=True,stdout=sp.PIPE).stdout:
     count+=1
@@ -36,13 +38,13 @@ for l in sp.Popen(rf"bedtools intersect -a {args.vcf} -wa -header -b {args.bed_f
                 out_dict[pos]=[AF,var_type,gene,subs,protein_subs]
         else:
             out_dict[pos]=[AF,var_type,gene,subs,protein_subs]
-    except:
+    except Exception as e:
         # if pos in err_positions:
         #     if AF>err_positions[pos]:
         #         err_positions[pos]=AF
         # else:
         #     err_positions[pos]=AF
-        print(f'Index error at position {pos} and AF is {AF}')
+        print(f'Error {e} at position {pos}')
 
 
 with open(args.bed_file,'r') as f: 
@@ -61,6 +63,7 @@ with open(f"{args.out_folder}/{args.suffix}_feature_annotations.txt",'w') as f:
             arr=out_dict[i]
             f.write(f"{bed_positions[i]}\t{i}\t{arr[2]}\t{arr[1]}\t{arr[3]}\t{arr[4]}\t{arr[0]}\n")
         except Exception as e: 
-            print(f'Problem with {bed_positions[i]} as {e}')
+            continue
+            #print(f'Problem with {bed_positions[i]} as {e}')
             
 print(count)

@@ -7,6 +7,10 @@ import os
 import re
 import pandas as pd
 
+'''
+This script works to count the number of 'High' and 'Moderate' impact variants per isolate in\
+the cannonical resistance associated genes for the different prevelant antibiotics drugs.
+'''
 parser=argparse.ArgumentParser(description='Get High impact variants genotype')
 parser.add_argument('--bed_file',required=True)
 parser.add_argument('--pheno',required=True)

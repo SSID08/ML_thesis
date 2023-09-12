@@ -18,6 +18,16 @@ import re
 
 #genos=defaultdict(dict)
 
+'''
+This script is a relatively simple staged hyper-parameter tuning approach\
+to arrive at the best combination of the three main input parameters for building\
+the GBT model. This is quite a naive and rudimentary approach especially considering\
+the grid size for the search of these parameters is quite small, it is quite computationally\
+expensive to run this sort of algorithm on wider grids. Other popular approaches such as Randomised\
+Grid Search or Random Halving Grid searches, which work on much smaller bacthces of data, did not\
+yield any particular improvement in performance over base models which prompted this trail of\
+such an approach. 
+'''
 parser=argparse.ArgumentParser(description='Run hyper-parameter tuning')
 
 parser.add_argument('--input',help="pickle input matrix and classification labels",required=True)
