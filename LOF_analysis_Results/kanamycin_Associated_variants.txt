@@ -1,0 +1,2 @@
+Position	Odds_Ratio	Matrix	P_value	Gene	Variant_Type	Nucleotide_Subs	Protein_Subs	Allele Frequency	LOF
+2714272	4.444	[    6, 2389,    9,15928]	0.0173	eis	frameshift_variant	c.1060dupG	p.Asp354fs	9.97248e-05	(eis|Rv2416c|1|1.00)

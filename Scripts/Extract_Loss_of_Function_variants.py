@@ -11,6 +11,8 @@ import re
 Extract loss of function variants
 '''
 parser=argparse.ArgumentParser(description='Extract loss of function variants')
+parser.add_argument('--VCF_anno_file',required=True)
+parser.add_argument('--Sample_IDs',required=True)
 parser.add_argument('--bed_file',required=True)
 parser.add_argument('--pheno',required=True)
 parser.add_argument('--out_folder',required=True)
@@ -31,7 +33,7 @@ var_names=[]
 #     print(f'Error {e} for file {args.bed_file}')
 
 try:
-    for l in sp.Popen(rf"bedtools intersect -a ./Data/snpEff_annotated_vcf_DRonly.vcf.gz -wa -header -b {args.bed_file}" + r"| bcftools query -f '[%POS\t%LOF\t%SAMPLE\t%GT\n]'",shell=True,stdout=sp.PIPE).stdout:
+    for l in sp.Popen(rf"bedtools intersect -a {args.VCF_anno_file} -wa -header -b {args.bed_file}" + rf"| bcftools query -S {args.Sample_IDs} --force-samples -f '[%POS\t%LOF\t%SAMPLE\t%GT\n]'",shell=True,stdout=sp.PIPE).stdout:
         pos,lof,sample,gt=l.decode().strip().split()
         pos=int(pos)
         if lof != '.':
@@ -47,7 +49,8 @@ try:
                     tracker[sample][pos]= gt
             except KeyError:
                 tracker[sample][pos]= gt
-
+    
+    print(len(tracker))
 
     print(f'Genotype info done for file: {args.bed_file}')
 

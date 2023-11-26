@@ -1,0 +1,2 @@
+Position	Odds_Ratio	Matrix	P_value	Gene	Variant_Type	Nucleotide_Subs	Protein_Subs	Allele Frequency	LOF
+775381	27.374	[    7,   96,   29,10907]	3.35e-08	echA5	frameshift_variant	c.602_662delAGTGTCTGCGATCGGATCGGCTGTCGGCGCTGCACCAGTGGGGCCTGCCCGAGTCCGCGGC	p.Gln201fs	1.99342e-05	(echA5|Rv0675|1|1.00)

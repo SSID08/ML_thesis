@@ -1,0 +1,1 @@
+Position	Odds_Ratio	Matrix	P_value	Gene	Variant_Type	Nucleotide_Subs	Protein_Subs	Allele Frequency	LOF
