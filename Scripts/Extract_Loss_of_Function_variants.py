@@ -13,7 +13,7 @@ Extract loss of function variants
 parser=argparse.ArgumentParser(description='Extract loss of function variants')
 parser.add_argument('--VCF_anno_file',required=True)
 parser.add_argument('--Sample_IDs',required=True)
-parser.add_argument('--bed_file',required=True)
+parser.add_argument('--bed_file',required=False)
 parser.add_argument('--pheno',required=True)
 parser.add_argument('--out_folder',required=True)
 args=parser.parse_args()
@@ -32,8 +32,13 @@ var_names=[]
 # except Exception as e: 
 #     print(f'Error {e} for file {args.bed_file}')
 
+if args.bed_file:
+    cmd= f"bedtools intersect -a {args.VCF_anno_file} -wa -header -b {args.bed_file}" + f"| bcftools query -S {args.Sample_IDs} --force-samples -f '[%POS\t%LOF\t%SAMPLE\t%GT\n]'"
+else: 
+    cmd= f"bcftools query -S {args.Sample_IDs} --force-samples -f '[%POS\t%LOF\t%SAMPLE\t%GT\n]' {args.VCF_anno_file}"
+
 try:
-    for l in sp.Popen(rf"bedtools intersect -a {args.VCF_anno_file} -wa -header -b {args.bed_file}" + rf"| bcftools query -S {args.Sample_IDs} --force-samples -f '[%POS\t%LOF\t%SAMPLE\t%GT\n]'",shell=True,stdout=sp.PIPE).stdout:
+    for l in sp.Popen(cmd,shell=True,stdout=sp.PIPE).stdout:
         pos,lof,sample,gt=l.decode().strip().split()
         pos=int(pos)
         if lof != '.':
@@ -52,7 +57,7 @@ try:
     
     print(len(tracker))
 
-    print(f'Genotype info done for file: {args.bed_file}')
+    print(f'Genotype info done for file: {args.pheno}')
 
     pheno={}
 
@@ -63,7 +68,7 @@ try:
             if row[0] in tracker:
                 pheno[row[0]]=int(row[1])
 
-    print(f'Phenotype info done for file: {args.bed_file}')
+    print(f'Phenotype info done for file: {args.pheno}')
 
     my_keys=list(tracker[list(tracker.keys())[0]].keys())
     out_list=[]
@@ -75,11 +80,11 @@ try:
 
     #Y = [pheno[s] for s in pheno]
     X=np.array(out_list)
-    f_name=re.sub('.bed','',os.path.basename(args.bed_file))
+    f_name=re.sub('.txt','',os.path.basename(args.pheno))
     pickle.dump({'Matrix':X,'Phenotype':np.array(Y),'Column_IDs':my_keys},open(os.path.join(args.out_folder,f'{f_name}.pkl'),'wb'))
 
 except Exception as e: 
-    print(f'Exception : {e} for file {args.bed_file}')
+    print(f'Exception : {e} for file {args.pheno}')
     
     
 
