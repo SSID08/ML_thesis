@@ -1,7 +1,7 @@
 Position	Odds_Ratio	Matrix	P_value	Gene	Variant_Type	Nucleotide_Subs	Protein_Subs	Allele Frequency	LOF
-781887	3.097	[2006,1899,1903,5579]	2.43e-164	rpsL	frameshift_variant	c.329dupG	p.Lys111fs	3.98684e-05	(rpsL|Rv0682|1|1.00)
-1405889	5.754	[   6,3899,   2,7480]	0.0379	Rv1257c	frameshift_variant	c.194_195delTG	p.Val65fs	2.00048e-05	(Rv1257c|Rv1257c|1|1.00)
-1405922	0.167	[  24,3881, 267,7215]	4.6e-25	Rv1257c	frameshift_variant	c.162delG	p.Thr55fs	2.01544e-05	(Rv1257c|Rv1257c|1|1.00)
-1405985	7.041	[  11,3894,   3,7479]	0.00226	Rv1257c	frameshift_variant	c.99dupC	p.Phe34fs	3.98812e-05	(Rv1257c|Rv1257c|1|1.00)
-1406003	11.51	[   6,3899,   1,7481]	0.016	Rv1257c	frameshift_variant	c.81delC	p.Tyr28fs	1.99406e-05	(Rv1257c|Rv1257c|1|1.00)
-1406343	19.202	[  10,3895,   1,7481]	0.000564	Rv1258c	frameshift_variant	c.996_997delTA	p.Tyr332fs	1.99398e-05	(Rv1258c|Rv1258c|1|1.00)
+1406760	3.097	[2006,1899,1903,5579]	2.43e-164	Rv1258c	frameshift_variant	c.580_581insC	p.Glu194fs	0.258261	(Rv1258c|Rv1258c|1|1.00)
+3568434	5.754	[   6,3899,   2,7480]	0.0379	whiB7	frameshift_variant	c.245_246insTT	p.Arg83fs	0.00127587	(whiB7|Rv3197A|1|1.00)
+3568488	0.167	[  24,3881, 267,7215]	4.6e-25	whiB7	frameshift_variant	c.191delG	p.Gly64fs	0.01818	(whiB7|Rv3197A|1|1.00)
+4338020	7.041	[  11,3894,   3,7479]	0.00226	Rv3861	frameshift_variant	c.78delC	p.Ile27fs	0.000299407	(Rv3861|Rv3861|1|1.00)
+4338181	11.51	[   6,3899,   1,7481]	0.016	Rv3861	frameshift_variant	c.239delG	p.Gly80fs	0.000179748	(Rv3861|Rv3861|1|1.00)
+4407912	19.202	[  10,3895,   1,7481]	0.000564	gid	frameshift_variant	c.161_290del	p.Val54fs	0.00119878	(gid|Rv3919c|1|1.00)

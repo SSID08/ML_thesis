@@ -1,3 +1,3 @@
 Position	Odds_Ratio	Matrix	P_value	Gene	Variant_Type	Nucleotide_Subs	Protein_Subs	Allele Frequency	LOF
-619718	2.143	[    9, 1633,   41,15945]	0.0469	Rv0528	frameshift_variant	c.1415_1416delTC	p.Ile472fs	2.00353e-05	(Rv0528|Rv0528|1|1.00)
-619723	11.718	[    6, 1636,    5,15981]	0.000396	Rv0528	frameshift_variant	c.1421delC	p.Pro474fs	2.00357e-05	(Rv0528|Rv0528|1|1.00)
+3568434	2.143	[    9, 1633,   41,15945]	0.0469	whiB7	frameshift_variant	c.245_246insTT	p.Arg83fs	0.00127587	(whiB7|Rv3197A|1|1.00)
+4338201	11.718	[    6, 1636,    5,15981]	0.000396	Rv3861	frameshift_variant	c.257dupC	p.His87fs	0.000179756	(whiB6|Rv3862c|1|1.00),(Rv3861|Rv3861|1|1.00)

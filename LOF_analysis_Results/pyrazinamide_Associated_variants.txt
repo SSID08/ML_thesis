@@ -1,6 +1,6 @@
 Position	Odds_Ratio	Matrix	P_value	Gene	Variant_Type	Nucleotide_Subs	Protein_Subs	Allele Frequency	LOF
-1405889	3.175	[ 1109, 1754, 2034,10214]	2.51e-135	Rv1257c	frameshift_variant	c.194_195delTG	p.Val65fs	2.00048e-05	(Rv1257c|Rv1257c|1|1.00)
-1405922	182.275	[   42, 2821,    1,12247]	2.08e-29	Rv1257c	frameshift_variant	c.162delG	p.Thr55fs	2.01544e-05	(Rv1257c|Rv1257c|1|1.00)
-1405985	12.856	[    6, 2857,    2,12246]	0.000906	Rv1257c	frameshift_variant	c.99dupC	p.Phe34fs	3.98812e-05	(Rv1257c|Rv1257c|1|1.00)
-1406003	15.004	[    7, 2856,    2,12246]	0.000273	Rv1257c	frameshift_variant	c.81delC	p.Tyr28fs	1.99406e-05	(Rv1257c|Rv1257c|1|1.00)
-1406193	0.226	[ 170,2693,2673,9575]	1.08e-103	Rv1258c	frameshift_variant	c.1141_1147delCTCGCGT	p.Leu381fs	1.99402e-05	(Rv1258c|Rv1258c|1|1.00)
+1406760	3.175	[ 1109, 1754, 2034,10214]	2.51e-135	Rv1258c	frameshift_variant	c.580_581insC	p.Glu194fs	0.258261	(Rv1258c|Rv1258c|1|1.00)
+2288724	182.275	[   42, 2821,    1,12247]	2.08e-29	pncA	frameshift_variant	c.517dupG	p.Glu173fs	0.00564723	(pncA|Rv2043c|1|1.00)
+2288834	12.856	[    6, 2857,    2,12246]	0.000906	pncA	frameshift_variant	c.407dupA	p.Asp136fs	0.000500691	(pncA|Rv2043c|1|1.00)
+2289049	15.004	[    7, 2856,    2,12246]	0.000273	pncA	frameshift_variant	c.192_193insA	p.Ser65fs	0.000520208	(pncA|Rv2043c|1|1.00)
+2289365	0.226	[ 170,2693,2673,9575]	1.08e-103	Rv2044c	frameshift_variant	c.234delC	p.Gly79fs	0.119968	(Rv2044c|Rv2044c|1|1.00)

@@ -1,2 +1,2 @@
 Position	Odds_Ratio	Matrix	P_value	Gene	Variant_Type	Nucleotide_Subs	Protein_Subs	Allele Frequency	LOF
-1416306	3.301	[   14, 5460,   19,24461]	0.00112	embR	frameshift_variant	c.1041delC	p.Asn348fs	0.000498435	(embR|Rv1267c|1|1.00)
+1416989	3.301	[   14, 5460,   19,24461]	0.00112	embR	frameshift_variant	c.358delA	p.Thr120fs	0.000818069	(embR|Rv1267c|1|1.00)
